@@ -11,7 +11,7 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   header:{
-    backgroundColor : 'coral',
+    backgroundColor : '#2FA4FF',
     height : 80,
     justifyContent : 'center',
     alignItems : 'center',

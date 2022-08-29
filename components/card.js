@@ -1,14 +1,20 @@
 import { Button, StyleSheet, Text, View,TouchableOpacity } from 'react-native';
 
-export default function Card({subject , percentage, done, clickhandle , code}) {
+export default function Card({subject , percentage, done, clickhandle,click2,percentage2}) {
 
   return (
     <View style = {styles.header}>
-        <Text style = {styles.title}>{subject}</Text>
-        <Text>Attendence percentage : {percentage}</Text>
+        <Text style = {styles.title}>{subject} - {Math.floor((percentage / (parseInt(percentage) + parseInt(percentage2)))*100)} %</Text>
+        <Text>Classes Attended : {percentage} / {parseInt(percentage) + parseInt(percentage2)} </Text>
+        <View style = {styles.butt}>
         <TouchableOpacity style = {styles.but}>
-            <Button title='Give attendence' color = 'coral'  disabled = {done} onPress = {() => clickhandle()}/>
+            <Button title='Add attendence' color = '#7DCE13'  disabled = {done} onPress = {() => clickhandle()}/>
         </TouchableOpacity>
+        <TouchableOpacity style = {styles.but}>
+            <Button title='Add missed' color = '#E64848'  disabled = {done} onPress = {() => click2()}/>
+        </TouchableOpacity>
+        </View>
+        
         
     </View>
   )
@@ -27,6 +33,12 @@ const styles = StyleSheet.create({
   },
   but : {
     // paddingHorizontal : 50,
-    marginTop : 5,
+    marginTop : 10,
+    display : 'flex',
+    marginHorizontal : 10,
+  },
+  butt : {
+    display : 'flex',
+    flexDirection : 'row',
   }
 });
