@@ -258,7 +258,7 @@ export default function App() {
     }
   }
   const mdsf = () => {
-    var mdat22 = parseInt(dat4) + 1;
+    var mdat22 = parseInt(mdat4) + 1;
     msetdd4(String(mdat22));
     const sd = async() => {
     try{
